@@ -1,0 +1,6 @@
+env
+.env
+__pycache__
+var
+.DS_Store
+isza

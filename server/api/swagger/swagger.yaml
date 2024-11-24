@@ -1,0 +1,97 @@
+basePath: /
+info:
+  contact: {}
+  description: Nothing to see here
+  title: An API
+  version: "1.0"
+paths:
+  /api/posts:
+    get:
+      description: Get all posts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get all posts
+      tags:
+      - posts
+  /api/posts/{id}:
+    delete:
+      description: Delete a post
+      parameters:
+      - description: Post ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "204":
+          description: No Content
+      security:
+      - Bearer: []
+      summary: Delete a post
+      tags:
+      - posts
+    get:
+      description: Get a post
+      parameters:
+      - description: Post ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get a post
+      tags:
+      - posts
+  /api/posts/{id}/unpost:
+    post:
+      description: Set a post as unposted
+      parameters:
+      - description: Post ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "204":
+          description: No Content
+      security:
+      - Bearer: []
+      summary: Set a post as unposted
+      tags:
+      - posts
+  /api/posts/clean_positions:
+    post:
+      description: Clean post positions
+      responses:
+        "204":
+          description: No Content
+      security:
+      - Bearer: []
+      summary: Clean post positions
+      tags:
+      - posts
+  /api/posts/make_post:
+    post:
+      description: Set a post as posted
+      responses:
+        "204":
+          description: No Content
+      security:
+      - Bearer: []
+      summary: Set a post as posted
+      tags:
+      - posts
+securityDefinitions:
+  Bearer:
+    description: Please provide a valid api token
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

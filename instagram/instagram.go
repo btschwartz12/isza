@@ -41,7 +41,7 @@ func ExecutePost(
 	}
 	pathsArg := strings.Join(fullPaths, ",")
 
-	pythonPath := filepath.Join(workingDir, "env", "bin", "python")
+	pythonPath := "python3"
 	scriptPath := filepath.Join(workingDir, "post.py")
 
 	cmd := exec.Command(pythonPath, scriptPath, username, password, pathsArg, captionPath, "false")

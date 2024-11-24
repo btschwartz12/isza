@@ -7,8 +7,8 @@ services:
     volumes:
       - ${VAR_DIR:-./var}:/app/var
       - ./instagram:/app/instagram
-    # networks:
-    #   - site_network
+    networks:
+      - site_network
     env_file:
       - .env
     environment:
@@ -18,6 +18,6 @@ services:
     ports:
       - "8000:8000"
 
-# networks:
-#   site_network:
-#     external: true
+networks:
+  site_network:
+    external: true

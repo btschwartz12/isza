@@ -9,6 +9,6 @@ FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/app .
 RUN apk add --no-cache tzdata python3 py3-pip \
-    && python3 -m venv /app/venv \
-    && . /app/venv/bin/activate \
+    && python3 -m venv /app/instagram/env \
+    && . /app/instagram/env/bin/activate \
     && pip install --no-cache-dir instagrapi==2.1.2 pillow==11.0.0
